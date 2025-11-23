@@ -65,16 +65,16 @@ export default function Hero() {
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a
-              href="#projects"
+              href="#experience"
               className="px-8 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
             >
               {sectionContent.hero.ctaPrimary}
             </a>
             <a
-              href="#experience"
+              href="#projects"
               className="px-8 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg font-semibold hover:bg-primary-50 dark:hover:bg-zinc-800 transition-colors"
             >
-              View Experience
+              {sectionContent.hero.ctaSecondary}
             </a>
           </motion.div>
         </motion.div>

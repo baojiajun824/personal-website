@@ -5,8 +5,8 @@ export interface SectionContent {
 
 export const sectionContent = {
   hero: {
-    ctaPrimary: "View My Work",
-    ctaSecondary: "Get In Touch",
+    ctaPrimary: "My Journey",
+    ctaSecondary: "My Projects",
   },
   about: {
     title: "About Me",
