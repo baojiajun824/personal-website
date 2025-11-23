@@ -20,10 +20,10 @@ export const metadata: Metadata = {
   description: `Personal portfolio website of ${personalInfo.name}, ${personalInfo.title}. ${personalInfo.tagline}`,
   icons: {
     icon: [
-      { url: personalInfo.avatarUrl, type: "image/jpeg" },
+      { url: "/avatar-removed-bg.png", type: "image/png" },
     ],
     apple: [
-      { url: personalInfo.avatarUrl, type: "image/jpeg" },
+      { url: "/avatar-removed-bg.png", type: "image/png" },
     ],
   },
 };
