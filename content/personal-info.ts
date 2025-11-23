@@ -5,6 +5,9 @@ export const personalInfo = {
   email: "baojiajun824@gmail.com",
   location: "Vancouver, BC, Canada",
   avatarUrl: "/avatar.JPG",
+  // Favicon: Set to a specific file path, or leave undefined to use avatarUrl
+  // Example: faviconUrl: "/avatar-removed-bg.png" for a circular favicon
+  faviconUrl: undefined, // Will use avatarUrl as fallback
   bio: {
     short: "Fullstack Developer with 6+ years of experience",
     long: [

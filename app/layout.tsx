@@ -15,15 +15,21 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Favicon configuration - automatically uses faviconUrl if available, otherwise falls back to avatarUrl
+const faviconPath = personalInfo.faviconUrl || personalInfo.avatarUrl;
+const faviconType = faviconPath.includes('.png') ? 'image/png' : 
+                    faviconPath.includes('.jpg') || faviconPath.includes('.jpeg') || faviconPath.includes('.JPG') ? 'image/jpeg' : 
+                    'image/png';
+
 export const metadata: Metadata = {
   title: `${personalInfo.name} | Building Digital Experiences`,
   description: `Personal portfolio website of ${personalInfo.name}, ${personalInfo.title}. ${personalInfo.tagline}`,
   icons: {
     icon: [
-      { url: "/avatar-removed-bg.png", type: "image/png" },
+      { url: faviconPath, type: faviconType },
     ],
     apple: [
-      { url: "/avatar-removed-bg.png", type: "image/png" },
+      { url: faviconPath, type: faviconType },
     ],
   },
 };
