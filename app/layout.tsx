@@ -16,8 +16,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${personalInfo.name} - Portfolio`,
+  title: `${personalInfo.name} | Building Digital Experiences`,
   description: `Personal portfolio website of ${personalInfo.name}, ${personalInfo.title}. ${personalInfo.tagline}`,
+  icons: {
+    icon: [
+      { url: personalInfo.avatarUrl, type: "image/jpeg" },
+    ],
+    apple: [
+      { url: personalInfo.avatarUrl, type: "image/jpeg" },
+    ],
+  },
 };
 
 export default function RootLayout({

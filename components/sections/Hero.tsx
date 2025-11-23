@@ -71,10 +71,10 @@ export default function Hero() {
               {sectionContent.hero.ctaPrimary}
             </a>
             <a
-              href="#contact"
+              href="#experience"
               className="px-8 py-3 border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 rounded-lg font-semibold hover:bg-primary-50 dark:hover:bg-zinc-800 transition-colors"
             >
-              {sectionContent.hero.ctaSecondary}
+              View Experience
             </a>
           </motion.div>
         </motion.div>

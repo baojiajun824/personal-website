@@ -20,21 +20,13 @@ export const sectionContent = {
     title: "Projects",
     subtitle: "Some of my recent work and side projects",
   },
-  contact: {
-    title: "Get In Touch",
-    subtitle: "Have a project in mind or want to collaborate? Let's talk!",
-    form: {
-      nameLabel: "Name",
-      namePlaceholder: "Your Name",
-      emailLabel: "Email",
-      emailPlaceholder: "your.email@example.com",
-      messageLabel: "Message",
-      messagePlaceholder: "Your message...",
-      submitButton: "Send Message",
-      submittingButton: "Sending...",
-      successMessage: "Thank you for your message! I'll get back to you soon.",
-      directContactText: "Or reach out directly:",
-    },
+  experience: {
+    title: "Experience",
+    subtitle: "My professional journey and work history",
+  },
+  education: {
+    title: "Education",
+    subtitle: "My academic background and qualifications",
   },
 } as const;
 

@@ -4,7 +4,7 @@ export const personalInfo = {
   tagline: "Fullstack Developer with 6+ years of experience developing customer-facing applications and features that drive user engagement and business value",
   email: "baojiajun824@gmail.com",
   location: "Vancouver, BC, Canada",
-  avatarUrl: "/avatar.JPG", // Add your avatar image to public/avatar.jpg
+  avatarUrl: "/avatar.JPG",
   bio: {
     short: "Fullstack Developer with 6+ years of experience",
     long: [
