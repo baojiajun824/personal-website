@@ -20,7 +20,7 @@ export const experiences: WorkExperience[] = [
       "Designed and Led fullstack features - including UI (TypeScript & React), web services (REST & GraphQL & SOAP), and integrations (Java) with comprehensive automated test coverage.",
       "Served as Scrum Master, leading ceremonies, monitoring epic and feature progress, managing sprint priorities and team capacity, and improving overall team performance and efficiency.",
       "Participated in on-call rotations, actively triaging and resolving critical customer-reported issues.",
-      "Mentored 2 junior developers and conducted knowledge-sharing sessions across the organization.",
+      "Mentored 2 developers and conducted knowledge-sharing sessions across the organization.",
     ],
   },
   {
@@ -34,7 +34,7 @@ export const experiences: WorkExperience[] = [
       "Designed, developed, and optimized REST APIs in Java for mobile and web applications.",
       "Implemented automated ETL data transformation pipelines from diverse data sources.",
       "Improved real-time data processing with Kafka and reduced query latency from seconds to milliseconds by integrating Elasticsearch.",
-      "Mentored a junior data engineer and backend engineer, providing hands-on technical guidance.",
+      "Mentored a data engineer and backend engineer, providing hands-on technical guidance.",
     ],
   },
   {
@@ -58,7 +58,7 @@ export const experiences: WorkExperience[] = [
     endDate: "10/2021",
     bullets: [
       "Led design and development of a provincial cancer research platform, including warehouse architecture, ETL pipelines (SSIS), and deployment of open-source applications.",
-      "Mentored and onboarded a junior developer, providing guidance that expanded team capacity.",
+      "Mentored and onboarded a developer, providing guidance that expanded team capacity.",
       "Supported and maintained two electronic data capture applications critical for research operations.",
     ],
   },
