@@ -58,7 +58,7 @@ export interface ComprehensiveProject {
 export interface ComprehensiveSkill {
   category: string;
   skills: string[];
-  proficiency?: "Expert" | "Advanced" | "Intermediate" | "Beginner";
+      proficiency?: "Expert" | "Advanced" | "Intermediate" | "Beginner" | string;
   yearsOfExperience?: string;
   lastUsed?: string;
 }
@@ -289,7 +289,7 @@ export const comprehensiveResumeData: ComprehensiveResumeData = {
     {
       category: "Data & Infrastructure",
       skills: ["SQL", "Elasticsearch", "Kafka", "SSIS", "Pantaho", "Trino", "PostgreSQL", "MySQL", "SQL Server", "DynamoDB", "Supabase"],
-      proficiency: "Intermediate to Advanced",
+      proficiency: "Advanced",
     },
     {
       category: "Cloud & DevOps",
