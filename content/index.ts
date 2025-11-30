@@ -7,4 +7,5 @@ export { navItems, type NavItem } from "./navigation";
 export { sectionContent, type SectionContent } from "./sections";
 export { experiences, type WorkExperience } from "./experience";
 export { education, type Education } from "./education";
+export { getResumeContext, resumeData, type ResumeData } from "./resume";
 
