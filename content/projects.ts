@@ -38,8 +38,8 @@ export const projects: Project[] = [
     id: 3,
     title: "Personal Portfolio",
     description:
-      "A modern portfolio website showcasing my work and skills. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4, featuring smooth animations and responsive design.",
-    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "A modern portfolio website showcasing my work and skills. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS v4, featuring smooth animations, responsive design, and an AI-powered chat assistant that answers questions about my professional background and experience.",
+    technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Google Gemini AI"],
     // No imageUrl - will display gradient background with "P" letter
     githubUrl: "https://github.com/baojiajun824",
     featured: false,

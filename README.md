@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-A modern, responsive personal portfolio website built with **Next.js 16**, **React 19**, **TypeScript**, and **Tailwind CSS v4**. This project showcases frontend development skills with a clean architecture, smooth animations, and modern design patterns.
+A modern, responsive personal portfolio website built with **Next.js 16**, **React 19**, **TypeScript**, and **Tailwind CSS v4**. This project showcases frontend development skills with a clean architecture, smooth animations, modern design patterns, and an **AI-powered chat assistant** that answers questions about professional background and experience.
 
 ## 🚀 Tech Stack
 
@@ -9,6 +9,7 @@ A modern, responsive personal portfolio website built with **Next.js 16**, **Rea
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS v4
 - **Animations**: Framer Motion
+- **AI Integration**: Google Gemini API
 - **Fonts**: Geist Sans & Geist Mono
 - **Deployment**: Vercel (recommended)
 
@@ -19,25 +20,38 @@ personal-website/
 ├── app/                    # Next.js app directory
 │   ├── layout.tsx         # Root layout with Navigation & Footer
 │   ├── page.tsx           # Home page (sections)
-│   └── globals.css        # Global styles with Tailwind v4
+│   ├── globals.css        # Global styles with Tailwind v4
+│   └── api/               # API routes
+│       └── chat/          # AI chat API endpoints
+│           ├── route.ts   # Main chat endpoint
+│           ├── models/    # Model listing endpoint
+│           │   └── route.ts
+│           └── test/      # API test endpoint
+│               └── route.ts
 ├── components/            # React components
 │   ├── layout/           # Layout components
 │   │   ├── Navigation.tsx # Responsive navigation with smooth scroll
 │   │   └── Footer.tsx     # Footer with social links
-│   └── sections/         # Page sections
-│       ├── Hero.tsx      # Hero section with animations
-│       ├── About.tsx     # About section
-│       ├── Skills.tsx    # Skills showcase
-│       ├── Projects.tsx  # Projects portfolio
-│       └── Contact.tsx   # Contact form
+│   ├── sections/         # Page sections
+│   │   ├── Hero.tsx      # Hero section with animations
+│   │   ├── About.tsx     # About section
+│   │   ├── Experience.tsx # Work experience timeline
+│   │   ├── Education.tsx  # Education timeline
+│   │   ├── Skills.tsx    # Skills showcase
+│   │   └── Projects.tsx  # Projects portfolio
+│   └── chat/            # AI chat components
+│       └── AIChatBot.tsx # AI-powered chat assistant
 ├── content/              # Content configuration (separated from components)
 │   ├── index.ts          # Central export point
 │   ├── personal-info.ts  # Personal information
 │   ├── skills.ts         # Skills data
 │   ├── projects.ts       # Projects data
+│   ├── experience.ts     # Work experience data
+│   ├── education.ts      # Education data
 │   ├── social-links.ts   # Social media links
 │   ├── navigation.ts     # Navigation items
-│   └── sections.ts       # Section titles and text
+│   ├── sections.ts       # Section titles and text
+│   └── ai-resume-data.ts # Comprehensive resume data for AI agent
 ├── public/               # Static assets
 ├── package.json
 ├── tsconfig.json
@@ -78,6 +92,19 @@ npm run dev
 
 3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
+### AI Chat Setup
+
+The website includes an AI-powered chat assistant powered by Google Gemini. To enable it:
+
+1. Get a free API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+2. Create a `.env.local` file in the project root:
+   ```bash
+   GEMINI_API_KEY=your_api_key_here
+   ```
+3. Restart your development server
+
+For detailed setup instructions and troubleshooting, see [AI_CHAT_SETUP.md](./AI_CHAT_SETUP.md).
+
 ### Build for Production
 
 ```bash
@@ -109,6 +136,13 @@ All editable content is separated from components in the `content/` directory. T
 
 6. **Section Content**: Edit `content/sections.ts`
    - Update section titles, subtitles, and form labels
+
+7. **Experience & Education**: Edit `content/experience.ts` and `content/education.ts`
+   - Update work experience and education history
+
+8. **AI Resume Data**: Edit `content/ai-resume-data.ts`
+   - Update comprehensive resume data used by the AI chat assistant
+   - This includes more detailed information than what's displayed on the website
 
 ### Benefits of Content Separation
 
@@ -142,20 +176,32 @@ If you prefer, you can still edit content directly in component files, but the c
 - ✅ Accessible components
 - ✅ Clean, maintainable code architecture
 - ✅ Interactive project cards
-- ✅ Contact form (ready for backend integration)
+- ✅ AI-powered chat assistant (Google Gemini) that answers questions about professional background, experience, and projects
+- ✅ Experience and Education timeline sections
+
+## 🤖 AI Chat Assistant
+
+The website features an embedded AI chat assistant powered by Google Gemini that can answer questions about professional background, technical skills, work experience, projects, and qualifications. The AI uses comprehensive resume data stored in `content/ai-resume-data.ts` to provide detailed and accurate responses.
+
+### Features:
+- **Intelligent Q&A**: Answers questions about professional experience, skills, and projects
+- **Context-Aware**: Maintains conversation history for natural dialogue
+- **Comprehensive Data**: Uses detailed resume information (more comprehensive than what's displayed on the website)
+- **Easy Setup**: Simple configuration with Google Gemini API (free tier available)
+
+See [AI_CHAT_SETUP.md](./AI_CHAT_SETUP.md) for setup instructions.
 
 ## 🚧 Future Enhancements
 
 - [ ] Dark mode toggle (manual switch)
-- [ ] Backend API integration for contact form
 - [ ] Blog section
 - [ ] Project filtering and search
 - [ ] Image optimization with Next.js Image
 - [ ] Analytics integration
 - [ ] Performance optimizations
-- [ ] Loading states and error handling
 - [ ] More interactive animations
 - [ ] Accessibility improvements
+- [ ] AI chat conversation export/sharing
 
 ## 📄 License
 
@@ -172,8 +218,10 @@ Since you're transitioning from backend to frontend, here are some concepts demo
 1. **React Hooks**: `useState`, `useEffect` for component state and lifecycle
 2. **Client Components**: `"use client"` directive for interactive components
 3. **Server Components**: Default in Next.js App Router for better performance
-4. **Animations**: Framer Motion for declarative animations
-5. **Responsive Design**: Tailwind's responsive utilities
-6. **TypeScript**: Type safety for better developer experience
-7. **Component Composition**: Breaking UI into reusable components
-8. **CSS-in-JS Alternative**: Utility-first CSS with Tailwind
+4. **API Routes**: Next.js API routes for backend functionality (AI chat endpoints)
+5. **Animations**: Framer Motion for declarative animations
+6. **Responsive Design**: Tailwind's responsive utilities
+7. **TypeScript**: Type safety for better developer experience
+8. **Component Composition**: Breaking UI into reusable components
+9. **CSS-in-JS Alternative**: Utility-first CSS with Tailwind
+10. **AI Integration**: Integrating third-party APIs (Google Gemini) for intelligent features

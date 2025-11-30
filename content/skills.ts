@@ -13,7 +13,6 @@ export const skillCategories: SkillCategory[] = [
       "JavaScript",
       "HTML5",
       "CSS3",
-      "Tailwind CSS",
     ],
   },
   {
@@ -23,9 +22,9 @@ export const skillCategories: SkillCategory[] = [
       "Python",
       "Node.js",
       "C#",
-      "REST APIs",
+      "REST",
       "GraphQL",
-      "SOAP APIs",
+      "SOAP",
     ],
   },
   {
@@ -47,6 +46,16 @@ export const skillCategories: SkillCategory[] = [
       "Vercel",
       "Git",
       "Automated Testing",
+      "Jenkins",
+    ],
+  },
+  {
+    title: "AI & Integration",
+    skills: [
+      "LLM Integration",
+      "API Integration",
+      "Prompt Engineering",
+      "AI Chat Interface",
     ],
   },
   {
