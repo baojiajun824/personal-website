@@ -8,4 +8,13 @@ export { sectionContent, type SectionContent } from "./sections";
 export { experiences, type WorkExperience } from "./experience";
 export { education, type Education } from "./education";
 export { getResumeContext, resumeData, type ResumeData } from "./resume";
+export { 
+  getComprehensiveResumeContext, 
+  comprehensiveResumeData,
+  type ComprehensiveResumeData,
+  type ComprehensiveWorkExperience,
+  type ComprehensiveEducation,
+  type ComprehensiveProject,
+  type ComprehensiveSkill
+} from "./ai-resume-data";
 

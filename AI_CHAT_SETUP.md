@@ -101,7 +101,7 @@ The AI chat agent uses Google's Gemini AI (with a generous free tier) to answer 
          │ Uses Gemini AI (Free Tier)
          │
 ┌────────▼────────┐
-│  Resume Data    │  (content/resume.ts)
+│  Resume Data    │  (content/ai-resume-data.ts)
 │  (Hardcoded)    │
 └─────────────────┘
 ```
@@ -109,31 +109,38 @@ The AI chat agent uses Google's Gemini AI (with a generous free tier) to answer 
 ### Data Flow
 
 1. **User asks a question** → Chat UI sends message to API
-2. **API receives question** → Retrieves hardcoded resume data from `content/resume.ts`
-3. **AI processes request** → Gemini AI uses resume context to generate answer
+2. **API receives question** → Retrieves comprehensive resume data from `content/ai-resume-data.ts`
+3. **AI processes request** → Gemini AI uses comprehensive resume context to generate answer
 4. **Response sent back** → Answer displayed in chat UI
 
 ### Resume Data Structure
 
-The AI agent uses data from the following content files:
-- `content/personal-info.ts` - Personal information and bio
-- `content/experience.ts` - Work experience
-- `content/education.ts` - Education history
-- `content/skills.ts` - Technical skills
-- `content/projects.ts` - Projects and portfolio
+The AI agent uses comprehensive resume data from `content/ai-resume-data.ts`, which includes:
+- **Personal Information**: Name, title, contact info, professional summary, core competencies
+- **Work Experience**: Detailed job descriptions, achievements, technologies used, team context
+- **Education**: Degree information, field of study, relevant coursework
+- **Skills**: Categorized technical skills with proficiency levels
+- **Projects**: Detailed project descriptions, features, challenges, and results
+- **Certifications**: Professional certifications and credentials
+- **Additional Info**: Languages, publications, awards, volunteer work (if applicable)
 
-All data is consolidated in `content/resume.ts` using the `getResumeContext()` function.
+This comprehensive data file is separate from the website display content, allowing you to include more detailed information that helps the AI provide thorough and accurate answers to recruiters and hiring managers.
 
 ## Customization
 
 ### Updating Resume Information
 
-Simply edit the content files in the `content/` directory. The AI will automatically use the updated information:
+Edit `content/ai-resume-data.ts` to update the comprehensive resume data that the AI agent uses. This file contains detailed information specifically for the AI, separate from what's displayed on the website.
 
-- Update work experience → Edit `content/experience.ts`
-- Update skills → Edit `content/skills.ts`
-- Update projects → Edit `content/projects.ts`
-- Update personal info → Edit `content/personal-info.ts`
+**Key sections to update:**
+- **Personal Info**: Update `comprehensiveResumeData.personalInfo` with summary, core competencies, etc.
+- **Work Experience**: Update `comprehensiveResumeData.workExperience` with detailed job descriptions, achievements, technologies, team context
+- **Education**: Update `comprehensiveResumeData.education` with degree details, coursework, honors
+- **Skills**: Update `comprehensiveResumeData.skills` with proficiency levels and years of experience
+- **Projects**: Update `comprehensiveResumeData.projects` with detailed descriptions, features, challenges, results
+- **Certifications**: Update `comprehensiveResumeData.certifications` with professional credentials
+
+**Note:** The website display content (in `content/experience.ts`, `content/skills.ts`, etc.) is separate from the AI resume data. You can maintain both independently - the website shows concise information, while the AI has access to comprehensive details.
 
 ### Customizing the AI Behavior
 

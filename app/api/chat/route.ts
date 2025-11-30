@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { NextRequest, NextResponse } from "next/server";
-import { getResumeContext } from "@/content/resume";
+import { getComprehensiveResumeContext } from "@/content/ai-resume-data";
 import { personalInfo } from "@/content";
 
 // Initialize Gemini AI
@@ -19,7 +19,7 @@ IMPORTANT GUIDELINES:
 - Highlight key achievements and technical expertise when relevant
 
 RESUME DATA:
-${getResumeContext()}
+${getComprehensiveResumeContext()}
 
 Remember: You are helping recruiters and hiring managers evaluate the candidate. Be helpful, accurate, and professional.`;
 

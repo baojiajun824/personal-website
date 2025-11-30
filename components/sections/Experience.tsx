@@ -100,19 +100,22 @@ export default function Experience() {
                         </span>
                       </div>
                     </div>
-                    <ul className="space-y-2 mt-4">
-                      {item.bullets.map((bullet, bulletIndex) => (
-                        <li
-                          key={bulletIndex}
-                          className="text-zinc-700 dark:text-zinc-300 flex items-start"
-                        >
-                          <span className="text-primary-600 dark:text-primary-400 mr-2 mt-1.5">
-                            •
-                          </span>
-                          <span>{bullet}</span>
-                        </li>
-                      ))}
-                    </ul>
+                    {/* Hide bullets for current job */}
+                    {item.endDate !== "Present" && item.bullets.length > 0 && (
+                      <ul className="space-y-2 mt-4">
+                        {item.bullets.map((bullet, bulletIndex) => (
+                          <li
+                            key={bulletIndex}
+                            className="text-zinc-700 dark:text-zinc-300 flex items-start"
+                          >
+                            <span className="text-primary-600 dark:text-primary-400 mr-2 mt-1.5">
+                              •
+                            </span>
+                            <span>{bullet}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </div>
                 </motion.div>
               ))}
