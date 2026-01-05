@@ -47,72 +47,74 @@ export default function Projects() {
           {sectionContent.projects.subtitle}
         </motion.p>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {projects.map((project) => (
-            <motion.div
-              key={project.id}
-              variants={itemVariants}
-              className="bg-zinc-50 dark:bg-black rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
-              onMouseEnter={() => setHoveredProject(project.id)}
-              onMouseLeave={() => setHoveredProject(null)}
-            >
-              <div className="aspect-square bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center relative overflow-hidden">
-                {project.imageUrl ? (
-                  <Image
-                    src={project.imageUrl}
-                    alt={project.title}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  />
-                ) : (
-                  <span className="text-white text-4xl font-bold opacity-50 relative z-10">
-                    {project.title.charAt(0)}
-                  </span>
-                )}
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-zinc-900 dark:text-zinc-100">
-                  {project.title}
-                </h3>
-                <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded text-xs"
-                    >
-                      {tech}
+        <div className="overflow-x-auto pb-4 -mx-4 px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 min-w-max lg:min-w-0 max-w-full lg:max-w-7xl mx-auto">
+            {projects.map((project) => (
+              <motion.div
+                key={project.id}
+                variants={itemVariants}
+                className="bg-zinc-50 dark:bg-black rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 min-w-[280px] lg:min-w-0"
+                onMouseEnter={() => setHoveredProject(project.id)}
+                onMouseLeave={() => setHoveredProject(null)}
+              >
+                <div className="aspect-square bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center relative overflow-hidden">
+                  {project.imageUrl ? (
+                    <Image
+                      src={project.imageUrl}
+                      alt={project.title}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 280px, (max-width: 1024px) 50vw, 25vw"
+                    />
+                  ) : (
+                    <span className="text-white text-3xl font-bold opacity-50 relative z-10">
+                      {project.title.charAt(0)}
                     </span>
-                  ))}
-                </div>
-                <div className="flex gap-4">
-                  {project.githubUrl && (
-                    <a
-                      href={project.githubUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-600 hover:text-primary-700 dark:text-primary-400 font-medium text-sm"
-                    >
-                      {project.githubUrlText || "Code"} →
-                    </a>
-                  )}
-                  {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-600 hover:text-primary-700 dark:text-primary-400 font-medium text-sm"
-                    >
-                      {project.liveUrlText || "Live Demo"} →
-                    </a>
                   )}
                 </div>
-              </div>
-            </motion.div>
-          ))}
+                <div className="p-4">
+                  <h3 className="text-base font-semibold mb-1.5 text-zinc-900 dark:text-zinc-100">
+                    {project.title}
+                  </h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 mb-3 text-sm leading-relaxed line-clamp-3">
+                    {project.description}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-1.5 py-0.5 bg-primary-100 dark:bg-primary-900 text-primary-800 dark:text-primary-200 rounded text-[10px]"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-3 flex-wrap">
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary-600 hover:text-primary-700 dark:text-primary-400 font-medium text-xs"
+                      >
+                        {project.githubUrlText || "Code"} →
+                      </a>
+                    )}
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary-600 hover:text-primary-700 dark:text-primary-400 font-medium text-xs"
+                      >
+                        {project.liveUrlText || "Live Demo"} →
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.div>
     </section>

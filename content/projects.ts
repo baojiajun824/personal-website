@@ -44,5 +44,15 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/baojiajun824",
     featured: false,
   },
+  {
+    id: 4,
+    title: "AI Voice Companion for Seniors",
+    description:
+      "A local-first voice companion for seniors with dementia. Provides conversation and proactive check-ins through a microservices architecture with real-time audio streaming, speech recognition, and natural language processing. Runs on Intel N100 mini-PC with optimized latency for CPU-only hardware.",
+    technologies: ["Python", "FastAPI", "Docker", "WebSocket", "Ollama", "Faster-Whisper", "Piper TTS", "Redis", "SQLite"],
+    githubUrl: "https://github.com/baojiajun824/cairu-companion",
+    githubUrlText: "View on GitHub",
+    featured: true,
+  },
 ];
 
